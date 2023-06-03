@@ -1,4 +1,4 @@
-import { Component,OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../services/product.service';
 
 @Component({
@@ -8,18 +8,23 @@ import { ProductService } from '../services/product.service';
 })
 export class HomeComponent implements OnInit {
   productsList: any[] = [];
-  numbers: number[] = Array.from({ length: 10 }, (_, i) => i + 1);
+  numbers: number = 0;
   constructor(private productsService: ProductService) {
     console.log(this.productsList);
   }
   ngOnInit(): void {
     debugger;
-    this.loadAllProducts()
+    this.loadAllProducts();
+    this.cart();
+  }
+  public cart(): void {
+    this.numbers = this.numbers + 1;
+    console.log(' numbers  componretn ', this.numbers);
   }
   loadAllProducts() {
     this.productsService.getAllProducts().subscribe((result: any) => {
       this.productsList = result;
-      console.log(" home componretn ",result.data);
+      console.log(' home componretn ', result.data);
     });
   }
 }
