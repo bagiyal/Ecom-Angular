@@ -6,13 +6,13 @@ import { CartComponent } from './cart/cart.component';
 
 const routes: Routes = [
   {
-    path:'**',
+    path:'',
     pathMatch:'full',
-    component:HomeComponent,
+    redirectTo:'home',
   },
   {
-    path: 'products',
-    component: HomeComponent
+    path:'home',
+    component: HomeComponent,
   },
   {
     path: 'navbar',

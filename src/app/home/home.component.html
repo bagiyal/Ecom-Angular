@@ -16,7 +16,7 @@
         <h6 class="card-subtitle mb-2 text-muted">{{ product.price }}</h6>
         <p class="card-text">Category: {{ product.category.slice(0, 20) }}</p>
         <p class="card-text">{{ product.description.slice(0, 60) }}</p>
-        <button class="btn-dark" type="button" (click)="cart()">
+        <button class="btn-dark" type="button" (click)="addItemToCart(product)">
           Add to Cart
         </button>
       </div>
